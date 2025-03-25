@@ -1,0 +1,127 @@
+/* Overall Waybar styling */
+#waybar {
+background: transparent; /* Make background transparent */
+color: #9e0000; /* Dark Slate Red text */
+font-family: "Roboto", sans-serif;
+font-size: 16px;
+border-radius: 0px; /* Remove border radius */
+margin: 0px; /* Remove margin */
+padding: 0px; /* Remove padding */
+transition: all 0.3s ease-in-out;
+box-shadow: none; /* Remove shadow */
+}
+
+/* Module styling */
+#workspaces button {
+padding: 0 8px;
+color: #9e0000; /* Dark Slate Red text */
+border: none;
+border-radius: 6px;
+background-color: rgba(30, 30, 30, 0.4); /* More transparent background */
+transition: all 0.2s ease-in-out;
+margin: 3px; /* Add margin */
+}
+
+#workspaces button.active {
+color: #9e0000; /* Dark Slate Red text */
+font-weight: bold;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Reduced shadow */
+}
+
+#workspaces button:hover {
+background-color: rgba(158, 0, 0, 0.2); /* Dark Slate Red hover effect */
+color: #ffffff;
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mpris,
+#custom-gpu_usage,
+#custom-vram_usage {
+padding: 2px 14px; /* Increased padding to make room for the glow */
+margin: 6px; /* Add margin */
+border-radius: 8px; /* Slightly larger border radius */
+transition: all 0.2s ease-in-out;
+border: none; /* Removed border */
+background-color: rgba(30, 30, 30, 0.4); /* More transparent background */
+color: #9e0000; /* Light gray text */
+box-shadow: 0 0 8px rgba(158, 0, 0, 0.5); /* Added glow effect */
+}
+
+#clock > *,
+#cpu > *,
+#memory > *,
+#network > *,
+#pulseaudio > *,
+#tray > *,
+#mpris > *,
+#custom-gpu_usage > *,
+#custom-vram_usage > * {
+margin-left: 5px;
+}
+
+#clock {
+color: #9e0000;
+}
+
+#cpu {
+color: #9e0000;
+}
+
+#memory {
+color: #9e0000;
+}
+
+#network {
+color: #9e0000;
+}
+
+#pulseaudio {
+color: #9e0000;
+}
+
+#tray {
+color: #9e0000;
+}
+
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#tray:hover,
+#mpris:hover,
+#custom-gpu_usage:hover,
+#custom-vram_usage:hover {
+background-color: rgba(158, 0, 0, 0.2); /* Dark Slate Red hover effect */
+color: #ffffff;
+box-shadow: 0 0 12px rgba(158, 0, 0, 0.7); /* Increased glow on hover */
+}
+
+#taskbar {
+margin: 0 12px;
+}
+
+#taskbar button {
+padding: 0 8px;
+color: #888888;
+border: none;
+border-radius: 6px;
+background-color: transparent;
+transition: all 0.2s ease-in-out;
+}
+
+#taskbar button.active {
+color: #9e0000; /* Dark Slate Red text */
+font-weight: bold;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Reduced shadow */
+}
+
+#taskbar button:hover {
+background-color: rgba(158, 0, 0, 0.2); /* Dark Slate Red hover effect */
+color: #ffffff;
+}
