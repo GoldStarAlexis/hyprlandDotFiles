@@ -1,127 +1,146 @@
 /* Overall Waybar styling */
 #waybar {
-background: transparent; /* Make background transparent */
-color: #9e0000; /* Dark Slate Red text */
+background: transparent;
+color: #9e0000;
 font-family: "Roboto", sans-serif;
 font-size: 16px;
-border-radius: 0px; /* Remove border radius */
-margin: 0px; /* Remove margin */
-padding: 0px; /* Remove padding */
-transition: all 0.3s ease-in-out;
-box-shadow: none; /* Remove shadow */
-}
-
-/* Module styling */
-#workspaces button {
-padding: 0 8px;
-color: #9e0000; /* Dark Slate Red text */
-border: none;
-border-radius: 6px;
-background-color: rgba(30, 30, 30, 0.4); /* More transparent background */
+margin: 0;
+padding: 0;
 transition: all 0.2s ease-in-out;
-margin: 3px; /* Add margin */
 }
 
-#workspaces button.active {
-color: #9e0000; /* Dark Slate Red text */
-font-weight: bold;
-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Reduced shadow */
-}
-
-#workspaces button:hover {
-background-color: rgba(158, 0, 0, 0.2); /* Dark Slate Red hover effect */
-color: #ffffff;
-}
-
+/* Module base styling */
 #clock,
 #cpu,
 #memory,
 #network,
 #pulseaudio,
 #tray,
-#mpris,
+#custom-resources,
+#temperature,
 #custom-gpu_usage,
-#custom-vram_usage {
-padding: 2px 14px; /* Increased padding to make room for the glow */
-margin: 6px; /* Add margin */
-border-radius: 8px; /* Slightly larger border radius */
+#custom-vram_usage,
+#window {
+padding: 2px 14px;
+margin: 6px;
+border-radius: 8px;
 transition: all 0.2s ease-in-out;
-border: none; /* Removed border */
-background-color: rgba(30, 30, 30, 0.4); /* More transparent background */
-color: #9e0000; /* Light gray text */
-box-shadow: 0 0 8px rgba(158, 0, 0, 0.5); /* Added glow effect */
-}
-
-#clock > *,
-#cpu > *,
-#memory > *,
-#network > *,
-#pulseaudio > *,
-#tray > *,
-#mpris > *,
-#custom-gpu_usage > *,
-#custom-vram_usage > * {
-margin-left: 5px;
-}
-
-#clock {
+background-color: rgba(30, 30, 30, 0.4);
 color: #9e0000;
+box-shadow: 0 0 8px rgba(158, 0, 0, 0.5);
+text-shadow: 0 0 2px rgba(158, 0, 0, 0.5);
 }
 
-#cpu {
-color: #9e0000;
+/* Make the resources module a bit wider for all the stats */
+#custom-resources {
+min-width: 340px;
 }
 
-#memory {
-color: #9e0000;
-}
-
-#network {
-color: #9e0000;
-}
-
-#pulseaudio {
-color: #9e0000;
-}
-
-#tray {
-color: #9e0000;
-}
-
+/* Hover effects for all modules */
 #clock:hover,
 #cpu:hover,
 #memory:hover,
 #network:hover,
 #pulseaudio:hover,
 #tray:hover,
-#mpris:hover,
+#temperature:hover,
 #custom-gpu_usage:hover,
-#custom-vram_usage:hover {
-background-color: rgba(158, 0, 0, 0.2); /* Dark Slate Red hover effect */
+#custom-vram_usage:hover,
+#custom-resources:hover,
+#window:hover {
+background-color: rgba(158, 0, 0, 0.2);
 color: #ffffff;
-box-shadow: 0 0 12px rgba(158, 0, 0, 0.7); /* Increased glow on hover */
+box-shadow: 0 0 12px rgba(158, 0, 0, 0.7);
 }
 
-#taskbar {
-margin: 0 12px;
-}
-
-#taskbar button {
+/* Workspaces styling */
+#workspaces button {
 padding: 0 8px;
-color: #888888;
+color: #9e0000;
 border: none;
-border-radius: 6px;
-background-color: transparent;
+border-radius: 8px;
+background-color: rgba(30, 30, 30, 0.4);
 transition: all 0.2s ease-in-out;
+margin: 6px;
 }
 
-#taskbar button.active {
-color: #9e0000; /* Dark Slate Red text */
-font-weight: bold;
-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Reduced shadow */
-}
-
-#taskbar button:hover {
-background-color: rgba(158, 0, 0, 0.2); /* Dark Slate Red hover effect */
+#workspaces button.active {
 color: #ffffff;
+font-weight: bold;
+background-color: rgba(158, 0, 0, 0.2);
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px rgba(158, 0, 0, 0.7);
+}
+
+#workspaces button:hover {
+background-color: rgba(158, 0, 0, 0.2);
+color: #ffffff;
+}
+
+/* Premium music widget styling */
+#mpris {
+background: linear-gradient(90deg, rgba(40, 10, 10, 0.6) 0%, rgba(60, 20, 20, 0.4) 100%);
+min-width: 200px;
+padding: 0 16px;
+margin: 6px 0;
+border-radius: 0 0 8px 8px;
+color: #ffffff;
+text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 8px rgba(158, 0, 0, 0.5), inset 0 0 10px rgba(158, 0, 0, 0.2);
+border-left: 3px solid #9e0000;
+font-weight: 500;
+letter-spacing: 0.3px;
+}
+
+#mpris:hover {
+background: linear-gradient(90deg, rgba(60, 20, 20, 0.6) 0%, rgba(80, 30, 30, 0.4) 100%);
+box-shadow: 0 0 12px rgba(158, 0, 0, 0.7), inset 0 0 15px rgba(158, 0, 0, 0.3);
+border-left: 3px solid #ff0000;
+}
+
+/* Playback control buttons */
+#custom-previous,
+#custom-next {
+background-color: rgba(40, 10, 10, 0.6);
+color: #9e0000;
+border-radius: 50%;
+margin: 6px 2px;
+padding: 0 10px;
+font-size: 16px;
+font-weight: bold;
+box-shadow: 0 0 5px rgba(158, 0, 0, 0.4);
+transition: all 0.2s ease;
+}
+
+#custom-previous {
+margin-right: -3px;
+border-radius: 8px 0 0 8px;
+}
+
+#custom-next {
+margin-left: -3px;
+border-radius: 0 8px 8px 0;
+}
+
+#custom-previous:hover,
+#custom-next:hover {
+background-color: rgba(158, 0, 0, 0.3);
+color: #ffffff;
+box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+padding: 0 12px; /* Slightly larger padding instead of transform */
+font-weight: bolder; /* More emphasis on hover */
+}
+
+
+/* For the tooltip */
+tooltip {
+    background-color: rgba(30, 10, 10, 0.95);
+    border: 1px solid #9e0000;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    padding: 8px;
 }

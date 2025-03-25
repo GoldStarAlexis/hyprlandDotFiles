@@ -1,67 +1,72 @@
 {
   "modules-left": [
     "clock",
-    "wlr/workspaces",
-    "custom/gpu_usage",
-    "custom/vram_usage"
+    "hyprland/workspaces"
   ],
   "modules-center": [
-    "mpris"
+    "custom/previous",
+    "mpris",
+    "custom/next"
   ],
   "modules-right": [
-    "cpu",
-    "memory",
+    "custom/resources",
     "network",
     "pulseaudio",
     "tray"
   ],
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true,
-    "format": "{name}"
+    "format": "{name}",
+    "on-click": "activate"
   },
   "clock": {
-   "format": "<span font_family=\"Font Awesome 6 Free\">󰅐 </span>\u0020{:%H:%M}",
-   "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
+    "format": "<span font_family=\"Font Awesome 6 Free\">󰅐 </span>{:%H:%M}",
+    "format-alt": "<span font_family=\"Font Awesome 6 Free\">󰅐 </span>{:%Y-%m-%d}",
+    "tooltip-format": "{:%Y-%m-%d | %H:%M:%S}",
+    "on-click": "mode"
   },
-  "cpu": {
-    "format": "<span font_family=\"Font Awesome 6 Free\"></span>\u0020{usage}%",
-    "interval": 1
-  },
-  "memory": {
-    "format": "<span font_family=\"Font Awesome 6 Free\"></span>\u0020{used:0.1f}GB",
-    "interval": 10
+  "custom/resources": {
+    "exec": "echo \"CPU: $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print int(usage)}')% | GPU: $(cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent)% | RAM: $(free -h | awk '/^Mem/ {print $3}') | VRAM: $(echo \"scale=1; $(cat /sys/class/hwmon/hwmon2/device/mem_info_vram_used) / 1024 / 1024 / 1024\" | bc)GB\"",
+    "format": "{}",
+    "return-type": "",
+    "interval": 2,
+    "tooltip": false
   },
   "network": {
-    "format-wifi": "<span font_family=\"Font Awesome 6 Free\">󰤨 </span>\u0020{essid} ({signalStrength}%)",
-    "format-ethernet": "<span font_family=\"Font Awesome 6 Free\">󰈀</span>\u0020Wired",
-    "format-disconnected": "<span font_family=\"Font Awesome 6 Free\">󰤭</span>\u0020Disconnected",
-    "interval": 60
+    "format-wifi": "<span font_family=\"Font Awesome 6 Free\">󰤨 </span>{essid}",
+    "format-ethernet": "<span font_family=\"Font Awesome 6 Free\">󰈀</span> Net",
+    "format-disconnected": "<span font_family=\"Font Awesome 6 Free\">󰤭</span> Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5
   },
   "pulseaudio": {
-    "format": "<span font_family=\"Font Awesome 6 Free\">󰖯 </span>\u0020{volume}% {icon}",
-    "format-muted": "<span font_family=\"Font Awesome 6 Free\"></span>\u0020Muted",
+    "format": "<span font_family=\"Font Awesome 6 Free\">{icon}</span>  {volume}%",
+    "format-muted": "<span font_family=\"Font Awesome 6 Free\"></span> Muted",
     "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "format-icons": ["󰖯", "󰕾", "󰖰"]
   },
   "tray": {
-      "icon-size": 21,
-      "spacing": 8
+    "icon-size": 21,
+    "spacing": 8
   },
- "spacing": 10,
   "mpris": {
-        "format": "{artist} - {title}",
-        "tooltip": true
-    },
-    "custom/gpu_usage": {
-        "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
-        "format": "GPU: {}%",
-        "return-type": "",
-        "interval": 1
-    },
-    "custom/vram_usage": {
-        "exec": "echo $(($(cat /sys/class/hwmon/hwmon2/device/mem_info_vram_used) / 1024 / 1024))",
-        "format": "VRAM: {}M / 24576M",
-        "interval": 1,
-        "tooltip": true
-    }
+    "format": "♫  {artist} - {title}",
+    "format-paused": "⏸  {artist} - {title}",
+    "max-length": 40,
+    "tooltip-format": "{album}\n{title} ({length})",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+    "custom/previous": {
+    "format": "⏮",
+    "on-click": "playerctl previous",
+    "tooltip": false
+  },
+  "custom/next": {
+    "format": "⏭",
+    "on-click": "playerctl next",
+    "tooltip": false
+  },
 }
