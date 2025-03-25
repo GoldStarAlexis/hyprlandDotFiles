@@ -1,0 +1,7 @@
+width=900
+height=600
+location=center
+term=kitty
+gtk-dark=true
+
+style=/home/alexisd/.config/wofi/style.css
