@@ -1,7 +1,7 @@
 /* Overall Waybar styling */
 #waybar {
 background: transparent;
-color: #9e0000;
+color: #666666; /* Light Grey for text */
 font-family: "Roboto", sans-serif;
 font-size: 16px;
 margin: 0;
@@ -25,10 +25,10 @@ padding: 2px 14px;
 margin: 6px;
 border-radius: 8px;
 transition: all 0.2s ease-in-out;
-background-color: rgba(30, 30, 30, 0.4);
-color: #9e0000;
-box-shadow: 0 0 8px rgba(158, 0, 0, 0.5);
-text-shadow: 0 0 2px rgba(158, 0, 0, 0.5);
+background-color: rgba(75, 0, 130, 0.2); /* Midnight Purple */
+color: #666666; /* Light Grey for text */
+box-shadow: 0 0 8px rgba(75, 0, 130, 0.4); /* Midnight Purple shadow */
+text-shadow: 0 0 2px rgba(75, 0, 130, 0.4); /* Midnight Purple text shadow */
 }
 
 /* Make the resources module a bit wider for all the stats */
@@ -48,67 +48,67 @@ min-width: 340px;
 #custom-vram_usage:hover,
 #custom-resources:hover,
 #window:hover {
-background-color: rgba(158, 0, 0, 0.2);
-color: #ffffff;
-box-shadow: 0 0 12px rgba(158, 0, 0, 0.7);
+background-color: rgba(75, 0, 130, 0.2); /* Midnight Purple with transparency */
+color: #ffffff; /* White for text on hover */
+box-shadow: 0 0 12px rgba(75, 0, 130, 0.7); /* Stronger Midnight Purple shadow */
 }
 
 /* Workspaces styling */
 #workspaces button {
 padding: 0 8px;
-color: #9e0000;
+color: #666666; /* Light Grey for text */
 border: none;
 border-radius: 8px;
-background-color: rgba(30, 30, 30, 0.4);
+background-color: rgba(33, 33, 33, 0.7); /* Dark Grey */
 transition: all 0.2s ease-in-out;
 margin: 6px;
 }
 
 #workspaces button.active {
-color: #ffffff;
+color: #ffffff; /* White for active text */
 font-weight: bold;
-background-color: rgba(158, 0, 0, 0.2);
+background-color: rgba(75, 0, 130, 0.2); /* Midnight Purple with transparency */
 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px rgba(158, 0, 0, 0.7);
+box-shadow: 0 0 10px rgba(75, 0, 130, 0.7); /* Stronger Midnight Purple shadow */
 }
 
 #workspaces button:hover {
-background-color: rgba(158, 0, 0, 0.2);
-color: #ffffff;
+background-color: rgba(75, 0, 130, 0.2); /* Midnight Purple with transparency */
+color: #ffffff; /* White for text on hover */
 }
 
 /* Premium music widget styling */
 #mpris {
-background: linear-gradient(90deg, rgba(40, 10, 10, 0.6) 0%, rgba(60, 20, 20, 0.4) 100%);
+background: linear-gradient(90deg, rgba(40, 10, 50, 0.6) 0%, rgba(60, 20, 70, 0.4) 100%);
 min-width: 200px;
 padding: 0 16px;
 margin: 6px 0;
 border-radius: 0 0 8px 8px;
-color: #ffffff;
+color: #ffffff; /* White for text */
 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 8px rgba(158, 0, 0, 0.5), inset 0 0 10px rgba(158, 0, 0, 0.2);
-border-left: 3px solid #9e0000;
+box-shadow: 0 0 8px rgba(75, 0, 130, 0.5), inset 0 0 10px rgba(75, 0, 130, 0.2);
+border-left: 3px solid #4B0082; /* Midnight Purple */
 font-weight: 500;
 letter-spacing: 0.3px;
 }
 
 #mpris:hover {
-background: linear-gradient(90deg, rgba(60, 20, 20, 0.6) 0%, rgba(80, 30, 30, 0.4) 100%);
-box-shadow: 0 0 12px rgba(158, 0, 0, 0.7), inset 0 0 15px rgba(158, 0, 0, 0.3);
-border-left: 3px solid #ff0000;
+background: linear-gradient(90deg, rgba(60, 20, 70, 0.6) 0%, rgba(80, 30, 90, 0.4) 100%);
+box-shadow: 0 0 12px rgba(75, 0, 130, 0.7), inset 0 0 15px rgba(75, 0, 130, 0.3);
+border-left: 3px solid #9e0000; /* Lighter Midnight Purple */
 }
 
 /* Playback control buttons */
 #custom-previous,
 #custom-next {
-background-color: rgba(40, 10, 10, 0.6);
-color: #9e0000;
+background-color: rgba(40, 10, 50, 0.6); /* Darker Midnight Purple */
+color: #ffffff; /* White for text */
 border-radius: 50%;
 margin: 6px 2px;
 padding: 0 10px;
 font-size: 16px;
 font-weight: bold;
-box-shadow: 0 0 5px rgba(158, 0, 0, 0.4);
+box-shadow: 0 0 5px rgba(75, 0, 130, 0.4); /* Midnight Purple shadow */
 transition: all 0.2s ease;
 }
 
@@ -124,23 +124,22 @@ border-radius: 0 8px 8px 0;
 
 #custom-previous:hover,
 #custom-next:hover {
-background-color: rgba(158, 0, 0, 0.3);
-color: #ffffff;
-box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+background-color: rgba(75, 0, 130, 0.3); /* Midnight Purple with transparency */
+color: #ffffff; /* White for text on hover */
+box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); /* Stronger red shadow */
 padding: 0 12px; /* Slightly larger padding instead of transform */
 font-weight: bolder; /* More emphasis on hover */
 }
 
-
 /* For the tooltip */
 tooltip {
-    background-color: rgba(30, 10, 10, 0.95);
-    border: 1px solid #9e0000;
+    background-color: rgba(30, 10, 50, 0.95); /* Darker Midnight Purple */
+    border: 1px solid #4B0082; /* Midnight Purple */
     border-radius: 8px;
 }
 
 tooltip label {
-    color: #ffffff;
+    color: #ffffff; /* White for text */
     font-family: "Roboto", sans-serif;
     padding: 8px;
 }

@@ -1,0 +1,65 @@
+# Basic appearance
+font=Roboto 12
+width=400
+height=150
+margin=20,20,0
+padding=15
+border-size=2
+border-radius=12
+progress-color=#7D009Caa over #4B008233
+
+# Colors - Midnight Purple Theme
+background-color=#1a1a20ee
+text-color=#ffffff
+border-color=#4B0082
+default-timeout=5000
+
+# Icon settings
+icon-path=/usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/apps/
+icon-location=left
+max-icon-size=64
+
+# Text format
+format=<b>%s</b>\n%b
+text-alignment=left
+
+# Effects
+outer-margin=10
+layer=overlay
+
+# Enable blur effect with Hyprland
+[mode=wayland]
+on-button-left=dismiss
+on-button-middle=dismiss-all
+on-button-right=invoke-default-action
+
+# Different urgency levels
+[urgency=low]
+background-color=#1a1a20dd
+text-color=#aaaaaa
+border-color=#4B0082aa
+default-timeout=4000
+
+[urgency=normal]
+background-color=#1a1a20ee
+text-color=#ffffff
+border-color=#7D009C
+default-timeout=6000
+
+[urgency=critical]
+background-color=#2a0a20fa
+text-color=#ffffff
+border-color=#ff00ffaa
+default-timeout=0
+
+# Special styling for specific apps
+[app-name=Spotify]
+background-color=#1a1a20ee
+text-color=#ffffff
+border-color=#7D009C
+format=<b>Now Playing</b>\n%s\n%b
+default-timeout=4000
+
+[app-name=volumectl]
+background-color=#1a1a20aa
+default-timeout=1000

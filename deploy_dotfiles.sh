@@ -6,7 +6,7 @@ SOURCE_DIR="$HOME/hyprlandDotFiles"
 # Define an associative array to map directories to their destinations
 declare -A destinations=(
   ["hypr"]="$HOME/.config/hypr"
-  ["dunst"]="$HOME/.config/dunst"
+  ["mako"]="$HOME/.config/mako"   # Changed from dunst to mako
   ["fish"]="$HOME/.config/fish"
   ["kitty"]="$HOME/.config/kitty"
   ["waybar"]="$HOME/.config/waybar"
