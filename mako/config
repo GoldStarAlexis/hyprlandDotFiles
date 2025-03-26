@@ -1,17 +1,17 @@
-# Basic appearance
-font=Roboto 12
+# Basic appearance with enhanced styling
+font=Fira Code 11
 width=400
 height=150
 margin=20,20,0
 padding=15
 border-size=2
 border-radius=12
-progress-color=#7D009Caa over #4B008233
+progress-color=#B700E3ee over #4B008233
 
-# Colors - Midnight Purple Theme
-background-color=#1a1a20ee
+# Enhanced Colors - Cyberpunk Purple Glass Theme
+background-color=#1a1a2088
 text-color=#ffffff
-border-color=#4B0082
+border-color=#9A30DB #7D009C #B700E3 #7D009C
 default-timeout=5000
 
 # Icon settings
@@ -19,47 +19,51 @@ icon-path=/usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-D
 icon-location=left
 max-icon-size=64
 
-# Text format
-format=<b>%s</b>\n%b
+# Text format with better styling
+format=<span foreground="#B700E3"><b>%s</b></span>\n%b
 text-alignment=left
 
-# Effects
+# Effects and behavior
 outer-margin=10
 layer=overlay
+anchor=top-right
 
-# Enable blur effect with Hyprland
+# Hyprland integration and actions
 [mode=wayland]
 on-button-left=dismiss
 on-button-middle=dismiss-all
 on-button-right=invoke-default-action
 
-# Different urgency levels
+# Different urgency levels with enhanced visuals
 [urgency=low]
-background-color=#1a1a20dd
+background-color=#1a1a2088
 text-color=#aaaaaa
-border-color=#4B0082aa
+border-color=#4B0082 #2A0048 #4B0082 #2A0048
 default-timeout=4000
 
 [urgency=normal]
-background-color=#1a1a20ee
+background-color=#1a1a2099
 text-color=#ffffff
-border-color=#7D009C
+border-color=#7D009C #4B0082 #7D009C #4B0082
 default-timeout=6000
 
 [urgency=critical]
-background-color=#2a0a20fa
+background-color=#2a0a20dd
 text-color=#ffffff
-border-color=#ff00ffaa
+border-color=#FF00FF #B700E3 #FF00FF #B700E3
 default-timeout=0
+progress-color=#FF00FFaa over #B700E333
+format=<span foreground="#FF00FF"><b>%s</b></span>\n%b
 
 # Special styling for specific apps
 [app-name=Spotify]
-background-color=#1a1a20ee
+background-color=#1a1a20aa
 text-color=#ffffff
-border-color=#7D009C
-format=<b>Now Playing</b>\n%s\n%b
+border-color=#9A30DB
+format=<span foreground="#9A30DB"><b>Now Playing</b></span>\n<i>%s</i>\n%b
 default-timeout=4000
 
 [app-name=volumectl]
 background-color=#1a1a20aa
 default-timeout=1000
+format=<span size="larger" foreground="#B700E3">%s</span>

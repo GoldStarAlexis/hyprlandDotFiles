@@ -2,78 +2,180 @@
 window {
     font-family: "Fira Code", monospace;
     font-size: 18px;
-    background-color: rgba(30, 30, 35, 0.65); /* Slightly bluish dark background with transparency */
+    background-color: rgba(25, 25, 35, 0.7); /* Darker base with more opacity */
     border-radius: 12px;
-    border: 1px solid rgba(75, 0, 130, 0.3); /* Subtle purple border */
+    border: 2px solid rgba(130, 0, 200, 0.6); /* Brighter, more visible border */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
-    0 0 15px rgba(75, 0, 130, 0.4),
-    inset 0 0 20px rgba(75, 0, 130, 0.1); /* Layered shadows for depth */
+    0 0 15px rgba(130, 0, 200, 0.5), /* Increased purple glow */
+    inset 0 0 20px rgba(130, 0, 200, 0.2); /* More visible inner glow */
     margin: 8px;
     padding: 16px;
     min-width: 600px;
 
-    /* Subtle gradient overlay */
+    /* More pronounced gradient with higher contrast */
     background-image: linear-gradient(135deg,
-                                      rgba(75, 0, 130, 0.05) 0%,
-                                      rgba(125, 0, 156, 0.1) 50%,
-                                      rgba(75, 0, 130, 0.05) 100%);
+                                      rgba(40, 0, 80, 0.3) 0%,
+                                      rgba(100, 0, 160, 0.35) 20%,
+                                      rgba(150, 0, 200, 0.4) 40%,
+                                      rgba(180, 30, 220, 0.45) 60%,
+                                      rgba(100, 0, 160, 0.35) 80%,
+                                      rgba(40, 0, 80, 0.3) 100%);
 }
+
 
 /* Input field styling */
 #input {
-background-color: rgba(75, 0, 130, 0.8); /* Darker background */
+background-color: rgba(40, 0, 80, 0.7); /* Darker, more transparent background */
 color: #ffffff;
 font-size: 18px;
 font-weight: bold;
-padding: 8px;
-border: 7px solid rgba(75, 0, 130, 0.3);
+padding: 12px; /* Increased padding for better visibility */
+border: 2px solid rgba(180, 30, 220, 0.7); /* Bright purple border */
 border-radius: 9px;
 margin: 6px;
-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+
+/* Enhanced glow effects */
+box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5),
+0 0 10px rgba(130, 0, 200, 0.3); /* Outer glow */
+
+/* Text styling */
+caret-color: rgba(200, 100, 255, 1.0); /* Bright purple cursor */
+text-shadow: 0 0 8px rgba(200, 100, 255, 0.5); /* Subtle text glow */
+
+/* Transition for focus effects */
+transition: all 0.2s ease;
 }
 
-/* Styling for the inner box that contains the entries */
+/* Input field when focused (typing) */
+#input:focus {
+border-color: rgba(220, 70, 255, 0.9); /* Brighter border when focused */
+box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5),
+0 0 16px rgba(180, 30, 220, 0.5); /* Enhanced glow when focused */
+}
+
+/* Main scrollbar container */
+#scroll {
+margin: 5px;
+border: none;
+}
+
+/* The scrollbar background/trough */
+scrollbar {
+    background-color: rgba(30, 30, 40, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 0, 150, 0.2);
+}
+
+/* The scrollbar slider/thumb */
+scrollbar slider {
+    min-height: 80px; /* Minimum slider size */
+    background-color: rgba(130, 30, 180, 0.5); /* Purple-tinted slider */
+    border-radius: 6px;
+    border: 1px solid rgba(180, 100, 220, 0.5); /* Subtle border */
+    margin: 2px;
+}
+
+/* Scrollbar slider hover state */
+scrollbar slider:hover {
+    background-color: rgba(160, 50, 220, 0.7); /* Brighter when hovered */
+    border: 1px solid rgba(200, 120, 255, 0.8);
+    box-shadow: 0 0 6px rgba(180, 50, 220, 0.5); /* Subtle glow on hover */
+}
+
+/* Scrollbar slider active state (when clicking) */
+scrollbar slider:active {
+    background-color: rgba(180, 70, 240, 0.8); /* Even brighter when active */
+}
+
+/* Inner box styling - container for all entries */
 #inner-box {
-margin: 6px;
+margin: 8px 4px;
+padding: 6px 2px;
+background-color: rgba(40, 10, 60, 0.25); /* Subtle background */
+border-radius: 10px;
+border: 1px solid rgba(130, 0, 200, 0.15); /* Very subtle border */
+
+/* Layered box shadows for depth */
+box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2),
+0 0 2px rgba(130, 0, 200, 0.2);
+
+/* Subtle gradient overlay */
+background-image: linear-gradient(160deg,
+                                  rgba(70, 0, 120, 0.1) 0%,
+                                  rgba(100, 0, 160, 0.08) 50%,
+                                  rgba(70, 0, 120, 0.1) 100%);
 }
 
-/* Styling for the text labels */
+/* Improve spacing between entries */
+#entry-wrapper {
+padding: 2px 0;
+margin: 2px 0;
+}
+
+/* Text element styling */
 #text {
 color: #ffffff;
-margin: 4px;
+margin: 4px 8px;
+padding: 2px;
+font-size: 17px; /* Slightly smaller than input for hierarchy */
+text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Subtle text shadow for readability */
 }
 
-/* Styling for the scrollbar */
-#scroll {
-margin: 4px;
+/* Icon styling */
+#img {
+margin: 4px 8px 4px 4px; /* Right margin to separate from text */
+padding: 2px;
+/* No filter property as it's not supported */
 }
 
-/* Styling for the entries (applications, commands, etc.) */
+/* Entry with icon alignment */
+#entry:selected #text {
+color: #ffffff;
+text-shadow: 0 0 8px rgba(200, 100, 255, 0.6); /* Stronger glow when selected */
+font-weight: bold;
+}
+
+/* Application description text (if shown) */
+#entry description {
+color: rgba(200, 180, 240, 0.7); /* Lighter purple for descriptions */
+font-size: 14px; /* Smaller size for secondary information */
+font-style: italic; /* Visually distinguish from main text */
+margin-left: 12px; /* Indent descriptions */
+}
+
+
+/* Styling for entries (applications, commands, etc.) */
 #entry {
-padding: 6px;
-color: #d0d0d0;
-border-radius: 6px;
+padding: 10px 12px; /* Increased padding for better spacing */
+margin: 4px 2px; /* More distinct margin between entries */
+color: #e0e0e0; /* Slightly brighter text for better readability */
+border-radius: 8px;
+border: 1px solid rgba(130, 0, 200, 0.1); /* Subtle border in normal state */
+background-color: rgba(60, 10, 100, 0.2); /* Light purple background */
+
+/* Smooth transitions for supported properties */
 transition: all 0.2s ease-in-out;
 }
 
-/* Styling for the selected entry (highlighted) */
+/* Hover effect for entries */
+#entry:hover {
+background-color: rgba(90, 20, 140, 0.3); /* Deeper purple on hover */
+border: 1px solid rgba(180, 30, 220, 0.3); /* More visible border on hover */
+color: #ffffff;
+box-shadow: 0 0 8px rgba(180, 30, 220, 0.2); /* Subtle glow on hover */
+margin-left: 5px; /* Use margin instead of transform for the shift effect */
+margin-right: 2px; /* Balance the shift */
+}
+
+/* Selected entry styling */
 #entry:selected {
-background-color: rgba(75, 0, 130, 0.4);
+background-color: rgba(110, 30, 160, 0.5); /* More solid background when selected */
 color: #ffffff;
 font-weight: bold;
-text-shadow: 0 2px 4px rgba(255, 0, 255, 1);
-border: 4px solid #7D009C;
-box-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
-}
-
-/* Hover effect for the entries */
-#entry:hover {
-background-color: rgba(75, 0, 130, 0.2);
-color: #ffffff;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-#entry image.after {
-opacity: 0;
+border: 2px solid rgba(200, 50, 255, 0.8); /* Bright border when selected */
+text-shadow: 0 0 10px rgba(255, 100, 255, 0.7); /* Enhanced text glow */
+box-shadow: 0 0 12px rgba(180, 30, 220, 0.4); /* Stronger outer glow */
+margin-left: 8px; /* Use margin instead of transform for the shift effect */
+margin-right: 0px; /* Balance the shift */
 }
 

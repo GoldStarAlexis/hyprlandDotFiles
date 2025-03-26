@@ -116,33 +116,20 @@ env = XCURSOR_SIZE,32
 env = QT_QPA_PLATFORMTHEME,qt6ct
 env = GTK_THEME,Breeze-Dark
 env = GDK_THEME,Breeze-Dark
-env = XCURSOR_THEME,Bibata-Modern-Classic
+env = XCURSOR_THEME,Fuchsia
 
 # ----------------------------------------------------------------------------
 
 general {
-    gaps_in = 4
-    gaps_out = 8
-    border_size = 3
-
-    # Gradient border effect using multiple colors
-    col.active_border = rgb(B700E3) rgb(7D009C) rgb(9A30DB) rgb(7D009C) 45deg
-    col.inactive_border = rgb(4B0082) rgb(2A0048) rgb(4B0082) rgb(2A0048) 45deg
-
-    # Optional: pulsing border (comment out the above colors to use this)
-    # col.active_border = rgba(B700E3ee) rgba(7D009Cee) rgba(9A30DBee) rgba(7D009Cee) 45deg
-    # col.inactive_border = rgba(4B0082aa) rgba(2A0048aa) rgba(4B0082aa) rgba(2A0048aa) 45deg
-
+    gaps_in = 3
+    gaps_out = 6
+    border_size = 4
     resize_on_border = true
-    extend_border_grab_area = 15
-    hover_icon_on_border = true
+    col.active_border = rgba(7D009CFF)  # Lighter Midnight Purple
+    col.inactive_border = rgba(4B0082FF)  # Midnight Purple
 
     # Better defaults for usability
     layout = dwindle
-
-    # Allow window borders to go offscreen
-    allow_tearing = false  # Set to true only if you have screen tearing issues
-
 }
 
 
@@ -161,122 +148,53 @@ input {
 }
 
 decoration {
-    rounding = 10
+    rounding = 12
 
-    # Opacity settings
-    active_opacity = 0.97
-    inactive_opacity = 0.85
+    inactive_opacity = 0.8
     fullscreen_opacity = 1.0
 
-    # Dimming settings
     dim_inactive = true
-    dim_strength = 0.15
-    dim_special = 0.05
-    dim_around = 0.4
+    dim_strength = 0.2
+    dim_special = 0.1
+    dim_around = 0.3
 
-    # Enhanced blur effect - using only supported properties
     blur {
         enabled = true
-        size = 8
-        passes = 3
+        size = 8  # Slightly higher for more pronounced effect
+        passes = 3 # One more pass for smoother blur
         new_optimizations = true
-        noise = 0.015
+        xray = true  # This looks cool with proper transparency
+        noise = 0.012
         contrast = 0.9
         brightness = 0.85
-        xray = true
     }
 
-    # Shadow - simplified to use only core supported properties
     shadow {
         enabled = true
-        range = 12
+        range = 30
         render_power = 3
-        color = rgba(B700E3AA)  # Bright purple shadow
+        sharp = false
         ignore_window = true
+        color = rgba(4B0082AA)  # Midnight Purple with transparency
+        scale = 1.0
     }
 }
+
 
 animations {
     enabled = true
 
-    # Custom bezier curves for different animation types
-    bezier = smoothOut, 0.36, 0, 0.66, -0.56    # Sharp deceleration
-    bezier = smoothIn, 0.25, 1, 0.5, 1          # Smooth acceleration
-    bezier = overshot, 0.05, 0.9, 0.1, 1.1      # Slight overshot effect
-    bezier = bounce, 1, 1.6, 0.1, 0.85          # Subtle bounce
-    bezier = warp, 0.22, 1, 0.36, 1             # Quick start, slow finish
-    bezier = cyber, 0.2, 0.65, 0, 1             # Cyberpunk-style motion
+    bezier = easeOutQuint, 0.22, 1, 0.36, 1
+    bezier = easeInOutQuint, 0.83, 0, 0.17, 1
 
-    # Window animations
-    animation = windows, 1, 5, cyber, slide     # Window open/close
-    animation = windowsIn, 1, 4, smoothIn       # Window appearance
-    animation = windowsOut, 1, 5, smoothOut     # Window disappearance
-    animation = windowsMove, 1, 4, cyber        # Window movement
-
-    # Border animations
-    animation = border, 1, 8, default           # Border color changes
-    animation = borderangle, 1, 30, cyber, loop # Border gradient rotation
-
-    # Fade effects
-    animation = fade, 1, 5, smoothIn            # General fades
-    animation = fadeDim, 1, 3, smoothIn         # Dimming animation
-    animation = fadeSwitch, 1, 5, smoothOut     # Workspace switch fade
-
-    # Workspace animations
-    animation = workspaces, 1, 5, overshot      # Workspace switching
-    animation = specialWorkspace, 1, 5, cyber   # Special workspace animation
+    animation = windows, 1, 6, easeInOutQuint, slide
+    animation = windowsIn, 1, 6, easeOutQuint, slide
+    animation = windowsOut, 1, 5, default, popin 80%
+    animation = border, 1, 8, default
+    animation = fade, 1, 7, default
+    animation = workspaces, 1, 5, easeInOutQuint, slide
 }
 
-# Special effects configuration - revised with supported options only
-misc {
-    # Enable variable refresh rate (adaptive sync)
-    vfr = true
-
-    # Mouse movement settings
-    mouse_move_enables_dpms = true
-    key_press_enables_dpms = true
-
-    # Smooth window dragging
-    animate_mouse_windowdragging = true
-    animate_manual_resizes = true
-
-    # Focus settings
-    focus_on_activate = true
-}
-
-# Gestures configuration
-gestures {
-    workspace_swipe = true
-    workspace_swipe_fingers = 3
-    workspace_swipe_distance = 300
-    workspace_swipe_invert = false
-    workspace_swipe_min_speed_to_force = 30
-    workspace_swipe_cancel_ratio = 0.5
-    workspace_swipe_create_new = true
-    workspace_swipe_forever = true
-}
-
-# Advanced window grouping visuals
-group {
-    col.border_active = rgb(B700E3)
-    col.border_inactive = rgb(4B0082)
-
-    groupbar {
-        font_size = 11
-        gradients = true
-
-        # Cyberpunk color scheme
-        col.active = rgb(B700E3) rgb(9A30DB) 45deg
-        col.inactive = rgb(4B0082) rgb(2A0048) 45deg
-    }
-}
-
-# Per-device input configuration
-device {
-    name = epic-mouse-v1
-    sensitivity = -0.5
-    accel_profile = flat
-}
 
 dwindle {
     pseudotile = true

@@ -9,7 +9,8 @@
 
   "modules-left": [
     "clock",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "temperature"
   ],
   "modules-center": [
     "custom/previous",
@@ -25,12 +26,9 @@
   ],
 
   "hyprland/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
+    "disable-scroll": true,
     "format": "{icon}",
     "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format-icons": {
       "1": "壹",
       "2": "贰",
@@ -43,27 +41,25 @@
     "persistent-workspaces": {
       "*": 5
     },
+    "all-outputs": true,
     "sort-by-number": true,
     "active-only": false
+  },
+
+  "temperature": {
+    "thermal-zone": 0,
+    "critical-threshold": 80,
+    "format": "▣ {temperatureC}°C",
+    "format-critical": "▣ {temperatureC}°C!",
+    "interval": 5,
+    "tooltip": true
   },
 
   "clock": {
     "format": "◑ {:%H:%M}",
     "format-alt": "◐ {:%Y-%m-%d}",
     "tooltip-format": "<b>{:%A, %B %d, %Y}</b>\n<small>{calendar}</small>",
-    "calendar": {
-      "mode": "month",
-      "on-scroll": 1,
-      "format": {
-        "today": "<span color='#B700E3'><b>{}</b></span>"
-      }
-    },
-    "actions": {
-      "on-click": "mode",
-      "on-click-right": "kitty --title floating calcurse",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    },
+    "on-click": "mode",
     "interval": 1,
     "tooltip": true
   },
@@ -74,16 +70,13 @@
     "return-type": "",
     "interval": 2,
     "tooltip": false,
-    "on-click": "kitty --title floating btop",
-    "on-click-right": "kitty --title floating htop"
+    "on-click": "kitty --title floating btop"
   },
 
   "custom/previous": {
     "format": "◄",
     "on-click": "playerctl previous",
-    "on-click-middle": "playerctl position 0",
-    "tooltip": true,
-    "tooltip-format": "Previous Track"
+    "tooltip": false
   },
 
   "mpris": {
@@ -95,7 +88,6 @@
     "tooltip-format": "▣ {album}\n▣ {title} ({length})",
     "on-click": "playerctl play-pause",
     "on-click-middle": "playerctl stop",
-    "on-click-right": "kitty --title floating ncmpcpp",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
     "interval": 1
@@ -104,9 +96,7 @@
   "custom/next": {
     "format": "►",
     "on-click": "playerctl next",
-    "on-click-middle": "playerctl shuffle toggle",
-    "tooltip": true,
-    "tooltip-format": "Next Track"
+    "tooltip": false
   },
 
   "network": {
@@ -114,24 +104,16 @@
     "format-ethernet": "◫ Connected",
     "format-disconnected": "⊗ Disconnected",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-    "format-linked": "◧ {ifname} (No IP)",
-    "tooltip-format-disconnected": "Disconnected",
-    "on-click": "kitty --title floating nmtui",
-    "on-click-right": "kitty --title floating watch -n1 iwctl station wlan0 show",
     "interval": 5,
-    "max-length": 20
+    "max-length": 20,
+    "on-click": "kitty --title floating nmtui"
   },
 
   "pulseaudio": {
     "format": "◈ {volume}%",
     "format-muted": "◇ Muted",
-    "format-bluetooth": "◈ {volume}% (BT)",
-    "format-bluetooth-muted": "◇ Muted (BT)",
     "on-click": "pavucontrol",
-    "on-click-middle": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 50%",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
     "scroll-step": 5.0,
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%\nDevice: {desc}"
@@ -139,15 +121,12 @@
 
   "custom/power": {
     "format": "⏻",
-    "tooltip": true,
-    "tooltip-format": "Power Menu",
-    "on-click": "/$HOME/hyprlandDotFiles/waybar/scripts/power-menu.sh",
-    "on-click-right": "systemctl suspend"
+    "tooltip": false,
+    "on-click": "/$HOME/hyprlandDotFiles/waybar/scripts/power-menu.sh"
   },
 
   "tray": {
     "icon-size": 21,
-    "spacing": 8,
-    "show-passive-items": true
+    "spacing": 8
   }
 }
