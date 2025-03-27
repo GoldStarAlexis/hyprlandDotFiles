@@ -11,7 +11,7 @@ progress-color=#B700E3ee over #4B008233
 # Enhanced Colors - Cyberpunk Purple Glass Theme
 background-color=#1a1a2088
 text-color=#ffffff
-border-color=#9A30DB #7D009C #B700E3 #7D009C
+border-color=#9A30DB
 default-timeout=5000
 
 # Icon settings
@@ -38,19 +38,19 @@ on-button-right=invoke-default-action
 [urgency=low]
 background-color=#1a1a2088
 text-color=#aaaaaa
-border-color=#4B0082 #2A0048 #4B0082 #2A0048
+border-color=#4B0082
 default-timeout=4000
 
 [urgency=normal]
 background-color=#1a1a2099
 text-color=#ffffff
-border-color=#7D009C #4B0082 #7D009C #4B0082
+border-color=#7D009C
 default-timeout=6000
 
 [urgency=critical]
 background-color=#2a0a20dd
 text-color=#ffffff
-border-color=#FF00FF #B700E3 #FF00FF #B700E3
+border-color=#FF00FF
 default-timeout=0
 progress-color=#FF00FFaa over #B700E333
 format=<span foreground="#FF00FF"><b>%s</b></span>\n%b
