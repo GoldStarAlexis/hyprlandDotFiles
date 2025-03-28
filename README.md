@@ -16,6 +16,10 @@ I included a special WoFi Dotfile selector that allows you to open a selection W
 `~/.local/bin/`
 This will let it work via the `SUPER+P` command :)
 
+## Additional Info
+- This is set up with Variable Refresh/Adaptive Sync enabled. If you don't have it, you might wanna go in and remove it from the `hyprland.conf` at ***Line 240***.
+- Please don't forget to edit the `hyprland.conf` to change the monitor settings! Do that before you apply this! Otherwise it will absolutely screw up lmfao. You should change the workspaces to your liking too.
+
 ## 🔧 Requirements
 
 This config uses:
@@ -30,4 +34,17 @@ This config uses:
 - wl-paste
 - blueman
 - nm-applet
+- wl-clip-persist
+- hyprpolkitagent
+- Google Chrome (you can edit the config if you want a different browser :P
+- Dolphin (same as above)
+- grim
+- slurp
+- pipewire + pipewire-pulse
+- qt6ct
+- Breeze Dark
+- Bibata Modern Classic)
+- mpv (optional, can be ignored tbh)
+- swaylock (but it's just a keybind, I didn't include my swaylock customization because... it isn't customized lol)
+- xdg-portal and variants - ***ESPECIALLY*** the hyprland variant
 - And maybe more I forgot lol
