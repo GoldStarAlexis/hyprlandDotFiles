@@ -9,3 +9,9 @@ Before you use ANY `.sh` files, make sure you look inside them, please. It's saf
 I don't actually think the `fish` really works or matters, because I still have to use `/.config/fish/` but I'm afraid to remove it because it will break my symlinks lol.
 
 Feel free to change it, but please don't take it and claim it as yours. It took a lot of time to make :)
+
+
+# OPTIONAL:
+I included a special WoFi Dotfile selector that allows you to open a selection WoFi menu to choose dotfiles to edit. If you want to use it, please place it in:
+`~/.local/bin/`
+This will let it work via the `SUPER+P` command :)
