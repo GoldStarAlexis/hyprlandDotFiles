@@ -15,3 +15,19 @@ Feel free to change it, but please don't take it and claim it as yours. It took 
 I included a special WoFi Dotfile selector that allows you to open a selection WoFi menu to choose dotfiles to edit. If you want to use it, please place it in:
 `~/.local/bin/`
 This will let it work via the `SUPER+P` command :)
+
+## 🔧 Requirements
+
+This config uses:
+- Hyprland
+- Waybar
+- Wofi
+- Mako
+- Kitty
+- Fish Shell
+- wl-clipboard
+- cliphist
+- wl-paste
+- blueman
+- nm-applet
+- And maybe more I forgot lol
