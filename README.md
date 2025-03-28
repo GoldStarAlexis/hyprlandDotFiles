@@ -6,4 +6,6 @@ Once you download it, you can either run the `deploy_dotfiles.sh` and it'll auto
 
 Before you use ANY `.sh` files, make sure you look inside them, please. It's safer to be sure that it's safe. Mine is safe, but please look in it anyway to make sure it isn't going to mess with your existing files and stuff.
 
+I don't actually think the `fish` really works or matters, because I still have to use `/.config/fish/` but I'm afraid to remove it because it will break my symlinks lol.
+
 Feel free to change it, but please don't take it and claim it as yours. It took a lot of time to make :)
