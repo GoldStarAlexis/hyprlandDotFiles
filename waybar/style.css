@@ -1,6 +1,6 @@
 /* Base styling with cyberpunk glass effect */
 #waybar {
-background: rgba(25, 25, 35, 0.7); /* Matching our stained glass background from Wofi */
+background: rgba(25, 25, 35, 0.7); /* Matching stained glass background from Wofi */
 background-image: linear-gradient(135deg,
                                   rgba(40, 0, 80, 0.2) 0%,
                                   rgba(100, 0, 160, 0.25) 20%,
@@ -8,7 +8,7 @@ background-image: linear-gradient(135deg,
                                   rgba(100, 0, 160, 0.25) 80%,
                                   rgba(40, 0, 80, 0.2) 100%);
 color: #e0e0e0; /* Lighter text for better readability */
-font-family: "Fira Code", "Roboto", sans-serif; /* Matching our Wofi font */
+font-family: "Fira Code", "Roboto", sans-serif; /* Matching Wofi font */
 font-size: 15px;
 font-weight: 500;
 letter-spacing: 0.5px;
