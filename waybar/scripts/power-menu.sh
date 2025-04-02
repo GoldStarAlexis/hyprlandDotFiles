@@ -2,7 +2,7 @@
 # ~/.config/waybar/scripts/power-menu.sh
 
 # Define the options for wofi
-OPTIONS="Lock\nLogout\nSuspend\nReboot\nShutdown"
+OPTIONS="🔒 Lock\n🚪 Logout\n💤 Suspend\n🔁 Reboot\n🛑 Shutdown"
 
 # Get user selection from wofi
 SELECTED=$(echo -e $OPTIONS | wofi --dmenu --insensitive --prompt "Power Menu" --width 200 --height 260)
